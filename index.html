@@ -1,0 +1,57 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#newQuoteButton").on("click", getNewQuote);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Copy from here -->
+    <div id="wholePageContainer" class="container-fluid">
+        <div id="pageTitleRow" class="row">
+            <div id="pageTitleContainer" class="col-md-6 col-md-offset-3">
+                <h1 id="pageTitle" class="center-text">
+                    Random Quote Generator
+                </h1>
+            </div>
+        </div>
+        <div id="instructionsRow" class="row">
+            <div id="instructionsContainer" class="col-md-8 col-md-offset-2">
+                <h3 id="instructions" class="center-text">
+                    <b>Instructions:</b> Click the button for a new quote.<br>
+                    <em>Thank you to <a href="http://www.forismatic.com" >forismatic.com</a> for providing the quote library!</em>
+                </h3>
+            </div>
+        </div>
+        <div id="quoteDisplayRow" class="row">
+            <div id="quoteDisplayContainer" class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+                <h2 id="quote" class="rectangle-speech-border"></h2>
+            </div>
+            <div id="quoteAuthorRow" class="row">
+                <div id="quoteIconContainer" class="col-md-1 col-md-offset-3 col-xs-2 col-xs-offset-2">
+                    <p id="quoteAuthorIcon">&#x1f474;</p>
+                </div>
+                <div id="quoteAuthorContainer" class="col-xs-6">
+                    <a id="authorLink"><cite id="author"></cite></a>
+                </div>
+            </div>
+            <div id="buttonRow" class="row">
+                <div id="buttonContainer" class="col-xs-6 col-xs-offset-4 col-sm-offset-5">
+                    <button id="newQuoteButton" class="btn">Get New Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Copy to here -->
+
+    <script type="text/javascript" src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=parseQuote"></script>
+
+</body>
