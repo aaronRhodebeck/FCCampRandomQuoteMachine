@@ -7,14 +7,14 @@ function convertToHashTag(str) {
 }
 
 function addTwitterButtonHTML(textToTweet, hashtags) {
-    return '<a class="btn-social-icon btn-twitter right-align-text col-xs-offset-2"' +
+    return '<a id="tweet-quote" class="btn-social-icon btn-twitter right-align-text col-xs-offset-2"' +
         'href="https://twitter.com/intent/tweet/?text=' + encodeURIComponent(textToTweet) +
         '&hashtags=' + convertToHashTag(hashtags) + '">' +
         '<span class="fa fa-twitter"></span></a>';
 }
 
 function parseQuote(response) {
-    document.getElementById("quote").innerHTML = '"' + response.quoteText + '"' +
+    document.getElementById("text").innerHTML = '"' + response.quoteText + '"' +
         addTwitterButtonHTML(response.quoteText, response.quoteAuthor);
     if (response.quoteAuthor !== "") {
         document.getElementById("author").innerHTML = " " + response.quoteAuthor;
